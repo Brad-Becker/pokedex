@@ -15,13 +15,30 @@ let pokemonRepository = (function () {
   };
 })();
 
-pokemonRepository.add("Bulbasaur");
-pokemonRepository.add("Chikorita");
-pokemonRepository.add("Treecko");
-pokemonRepository.add("Turtwig");
-pokemonRepository.add("Victini");
+pokemonRepository.add({
+  name: 'Bulbasaur',
+  height: 7,
+  types: ['grass', 'poison']
+});
+
+pokemonRepository.add({
+  name: 'Charmander',
+  height: 0.5,
+  types: ['fire', 'dragon']
+});
+
+pokemonRepository.add({
+  name: 'Pikachu',
+  height: 1.1,
+  types: ['electricity']
+});
+
 
 pokemonRepository.getAll().forEach(pokemon=>{
-  document.write(pokemon + "<br>");
+  document.write("Name: " +pokemon.name + "<br>");
+  document.write("Height: " +pokemon.height + "<br>");
+  document.write("Types: "+ pokemon.types + "<br>");
 })
+
+
 
